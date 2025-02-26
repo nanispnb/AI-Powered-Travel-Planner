@@ -5,12 +5,12 @@ from langchain_core.output_parsers import StrOutputParser
 
 st.title("AI Powered Travel Planner 📍🗺️")
 
-course_name = st.text_input("Enter From(Departure) and To(Arrival) Places (e.g., Mumbai to Delhi):")
+Route = st.text_input("Enter From(Departure) and To(Arrival) Places (e.g., Mumbai to Delhi):")
 
 if st.button("Generate Travel Choices"):
-    if course_name:
+    if Route:
         try:
-            parts = course_name.split(" to ")
+            parts = Route.split(" to ")
             if len(parts) != 2:
                 st.error("Please enter the input in the format 'Source to Destination'.")
                 st.stop()
